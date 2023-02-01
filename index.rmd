@@ -48,7 +48,7 @@ plot1=base + geom_bar(stat = 'identity',
       scale_y_continuous(labels = percent) + 
       guides(fill=guide_legend(title="Race/Ethnicity"))
 plot2 = plot1 + geom_hline(yintercept = 0.5,
-                           size=0.5,
+                           linewidth=0.5,
                            alpha=0.7,
                            color = "black", 
                            linetype = "dashed") + 
