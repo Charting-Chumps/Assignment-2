@@ -1,6 +1,8 @@
 ---
 title: "PUBPOL 543 Assingment 2 workbook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 Packages
@@ -49,10 +51,14 @@ plot2 = plot1 + geom_hline(yintercept = 0.5, #where
                            size=0.5, #thickness
                            alpha=0.7,#transparency
                            color = "black", 
-                           linetype = "dashed")
+                           linetype = "dashed") + 
+                theme(axis.text.x = element_text(angle = -30, hjust = 0.5))
+plot2
+
+#Can add labels, but for native and indigenous Washingtonians the labels overlap in an ugly way
 #plot3 = plot2 + geom_text(size = 3, 
                   #position = position_stack(vjust = 0.5),
                  # aes(label=percent(PctTotalYear,accuracy = 1)))
-plot2
+
 ```
 
