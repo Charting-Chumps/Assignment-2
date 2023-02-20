@@ -1,12 +1,12 @@
 ---
-title: "PUBPOL 543 Assingment 2 workbook"
+title: "Deliverable 2"
 output:
   html_document:
     df_print: paged
 ---
 
-Packages
-```{r}
+```{r, message=FALSE,echo=FALSE,results='hide',warning=FALSE}
+#Packages
 library(tidyverse)
 library(ggplot2)
 library(scales)
@@ -16,14 +16,14 @@ library(rio)
 library(pivottabler)
 ```
 
-Data
-```{r}
+```{r, message=FALSE,echo=FALSE,results='hide',warning=FALSE}
+#Data
 link = "https://github.com/Charting-Chumps/Data/raw/main/Race_Enrollment.csv"
 df = as.data.frame(import(link))
 ```
 
-Analysis
-```{r}
+```{r, message=FALSE,echo=FALSE,results='hide',warning=FALSE}
+#Analysis
 df=as.data.frame(df)
 df$Race=as.factor(df$Race)
 df$SchoolYear=as.factor(df$SchoolYear)
@@ -32,7 +32,9 @@ df$YearTotal = c(1091355, 1091355, 1091355, 1091355, 1091355, 1091355, 1091355, 
 df$PctTotalYear = df$Total / df$YearTotal
 ```
 
-```{r}
+Plot
+
+```{r, message=FALSE,results='hide',warning=FALSE}
 base=ggplot(data=df,
             aes(x = SchoolYear,
                 y = PctTotalYear,
@@ -55,4 +57,3 @@ plot2 = plot1 + geom_hline(yintercept = 0.5,
                 theme(axis.text.x = element_text(angle = -30, hjust = 0.5))
 plot2
 ```
-
